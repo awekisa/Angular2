@@ -1,0 +1,15 @@
+<div>
+  <div *ngIf='car'>
+      <img src='{{car.image}}' alt='car'/>
+      <div>Make: {{car.make}} Model: {{car.model}} Year: {{car.year}}</div>
+      <div>Engine: {{car.engine}}</div>
+      <div>Price: {{car.price}}</div>
+      <div>Mileage: {{car.mileage}}  </div>
+       Number of Likes: {{car.likes}}
+       <br/>
+        <likes [id]='car.id' (likeState)='updateLikes($event)'></likes> 
+       <br/>
+        <reviews [id]='car.id'></reviews> 
+  </div>
+  
+</div>

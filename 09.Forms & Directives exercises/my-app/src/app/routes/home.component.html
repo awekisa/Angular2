@@ -1,0 +1,12 @@
+<h1>Home</h1>
+
+<ul>
+  <li *ngFor='let car of cars'>
+    <article>
+      <h2>{{car.make}}</h2>
+      <h3>{{car.model}}</h3>
+      <img borderDirective src="{{car.image}}" alt="car-image">
+      <a routerLink='/cars/{{car.id}}'>Details</a>
+    </article>
+  </li>
+</ul>

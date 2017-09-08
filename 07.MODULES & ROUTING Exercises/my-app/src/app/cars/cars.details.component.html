@@ -1,0 +1,14 @@
+<article>
+      <h2>{{car?.make}} - {{car?.model}}</h2>
+      <img src="{{car?.image}}" alt="car-image">
+      <h4>{{car?.owner}}</h4>
+      <h4>{{car?.decription}}</h4>
+      <h4>{{car?.price}}</h4>
+      <h4>{{car?.engine}}</h4>
+      <h4>{{car?.date}}</h4>
+      <ul>
+        <li *ngFor='let comment of car?.comments'>
+          {{comment}}
+        </li>
+      </ul>
+    </article>

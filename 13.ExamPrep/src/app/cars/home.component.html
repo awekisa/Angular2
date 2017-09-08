@@ -1,0 +1,22 @@
+<h2>All stats</h2>
+<stats></stats>
+<br/>
+<br/>
+<search-bar [page]='page' (queryCars)='updateCars($event)'></search-bar>
+<br/>
+<br/>
+<div *ngIf='cars'>
+  <h1>All cars</h1>
+  <div *ngIf='cars.length === 0'>No more cars available!</div>
+  <div class='car-size'>
+    <div *ngFor='let car of cars'>
+    <div>Make: {{car.make}} Model: {{car.model}} Year: {{car.year}}</div>
+    <img src='{{car.image}}' alt='car'/>
+    <div><a routerLink='/cars/details/{{car.id}}'>Details</a></div>
+    </div>
+    <div>
+      <button [disabled]='page === 1' (click)='prevPage()'>Prev</button>
+      <button [disabled]='cars.length === 0 || cars.length < 10' (click)='nextPage()'>Next</button>
+    </div>
+  </div>
+</div>

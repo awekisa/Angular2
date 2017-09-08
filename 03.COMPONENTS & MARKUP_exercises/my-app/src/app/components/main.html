@@ -1,0 +1,30 @@
+<label>Color</label>
+<select (change)='onColorChange($event.target.value)'>
+  <option value="">none</option>
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="yellow">Yellow</option>
+  <option value="blue">Blue</option>
+</select>
+<label>Background Color</label>
+<select (change)='onBackgroundColorChange($event.target.value)'>
+  <option value="">none</option>
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="yellow">Yellow</option>
+  <option value="blue">Blue</option>
+</select>
+<br/>
+<button *ngIf='incFontSizeBtn' (click)='incFontSize()' >Increase Size</button>
+<button *ngIf='decFontSizeBtn' (click)='decFontSize()' >Decrease Size</button>
+<article>
+  <h1>{{title}}</h1>
+  <h2>{{author}}</h2>
+  <img *ngIf='buttonShow' src={{image}} alt="image">
+  <button (click)='toggleImage()'>{{imageButton}}</button>
+  <p
+    [style.font-size] = "fontSize + 'px'"
+    [style.color] = 'colorValue'
+    [style.background-color] = 'backgroundColorValue'>{{shortDescription}}</p>
+   <button (click)='show250()' *ngIf='!disabled'>ReadMore</button>
+</article>

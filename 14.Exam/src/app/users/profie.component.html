@@ -1,0 +1,6 @@
+<h1>All my cars</h1>
+<div *ngFor='let car of myCars'>
+  <div>Make: {{car.make}} Model: {{car.model}} Year: {{car.year}}</div>
+  <img src='{{car.image}}' alt='car'/>
+  <button (click)='deleteCar(car.id)'>Delete Car</button>
+</div>

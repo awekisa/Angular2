@@ -1,0 +1,19 @@
+<br/>
+<br/>
+<div>
+  <div *ngFor='let list of reviews'>
+    <div>Rating: {{list.rating}}</div>
+    <div>User: {{list.rating}}</div>
+    <div>Created On: {{list.createdOn}}</div>
+  </div>
+</div>
+<br/>
+<br/>
+<form #reviewForm='ngForm' (submit)='createReview()'>
+    <div>Rate this car</div>
+    <select name='rating' [(ngModel)]='review.rating'>
+      <option *ngFor='let rating of ratings' [ngValue]="rating">{{rating}}</option>
+    </select>
+    <input type='text' name='comment' id='comment' [(ngModel)]='review.text' />
+    <input type='submit' value='Submit'/>  
+</form>

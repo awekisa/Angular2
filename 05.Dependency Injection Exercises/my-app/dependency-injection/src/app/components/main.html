@@ -1,0 +1,37 @@
+<section class='main'>
+  <img src='{{user?.avatar_url}}' />
+  <h1>{{user?.login}}</h1>
+  <h2>Public repos - {{user?.public_repos}}</h2>
+  <h2>Followers - {{user?.followers}}</h2>
+</section>
+<section class='followers'>
+  <h1>Followers</h1>
+  <ul>
+    <li *ngFor='let follower of followers'>
+      <img src='{{follower?.avatar_url}}' />
+      <h3>{{follower?.login}}</h3>
+      <h4><a href='{{follower?.html_url}}' target="_blank">url</a></h4>
+    </li>
+  </ul>
+</section>
+<section class='repos'>
+  <h1>Repositories</h1>
+  <ul>
+    <li *ngFor='let repo of repos'>
+      <h3>{{repo?.name}}</h3>
+      <h4><a href='{{repo?.html_url}}' target="_blank">url</a></h4>
+      <h3>Language - {{repo?.language}}</h3>
+      <h3>Rating - {{repo?.stargazers_count}}</h3>
+      <button (click)='showContributors(repo?.name)'>Show Contributors</button> 
+    </li>
+  </ul>
+</section>
+<section class='contributors'>
+  <ul>
+    <li *ngFor='let contributor of contributors'>
+      <img src='{{contributor?.avatar_url}}' />
+      <h3>{{contributor?.login}}</h3>
+      <h4>Contributions - {{contributor?.contributions}}</h4>
+    </li>
+  </ul>
+</section>

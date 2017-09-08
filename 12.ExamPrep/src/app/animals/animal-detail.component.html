@@ -1,0 +1,20 @@
+<div>
+  <div *ngIf='animal'>
+      <img src='{{animal.image}}' alt='animal'/>
+      <div>Name: {{animal.name}} Age: {{animal.age}} Color: {{animal.color}}</div>
+      <div>Type: {{animal.type}}</div>
+      <div>Price: {{animal.price}}</div>
+      <div>Breed: {{animal.breed}}  </div>
+       Number of Likes: {{reactions.like}}, <br/>
+       Love: {{reactions.love}}, <br/>
+       Haha: {{reactions.haha}}, <br/>
+       Wow: {{reactions.wow}}, <br/>
+       Sad: {{reactions.sad}}, <br/>
+       Angry: {{reactions.angry}}
+       <br/>
+       <likes [id]='animal.id' (likeState)='updateLikes($event)'></likes>
+       <br/>
+       <reviews [id]='animal.id'></reviews>
+  </div>
+  
+</div>

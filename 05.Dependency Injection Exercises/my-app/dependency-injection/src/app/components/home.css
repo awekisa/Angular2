@@ -1,0 +1,72 @@
+:host {
+  width: 70%; display: inline-block;
+  border: 1px solid black;
+  vertical-align: top;
+}
+
+.main {
+  padding: 5px;
+  border-bottom: 1px solid black;
+}
+h1 {
+  width:50%;
+  display:inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+img {
+  width:10%;
+  display:inline-block;
+  vertical-align: top;
+}
+
+.followers, .repos, .contributors {
+  padding-left: 5px;
+}
+.followers ul, .repos ul, .contributors ul {
+  padding: 0;
+  list-style: none;
+}
+
+.followers ul > li, .repos ul > li, .contributors ul > li {
+  border-bottom: 1px solid black;
+}
+
+.followers h3, .repos h3, .contributors h3 {
+  word-break: break-all;
+}
+
+.followers {
+  vertical-align: top;
+  width: 32%;
+  display: inline-block;
+  border-right: 1px solid black;
+}
+.repos {
+  vertical-align: top;
+  width: 32%;
+  display:inline-block;
+  border-right: 1px solid black;
+}
+
+.contributors {
+  vertical-align: top;
+  width: 32%;
+  display:inline-block;
+  border-right: 1px solid black;  
+}
+
+.contributors h3 {
+  width:80%;
+  display:inline-block;
+  vertical-align: top;
+  margin: 0 0 0 10px;
+}
+
+.contributors img {
+  width:10%;
+  display:inline-block;
+  vertical-align: top;
+}
+

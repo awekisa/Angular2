@@ -1,0 +1,17 @@
+<h1>Cars</h1>
+<ul class='menu'>
+  <li (click)='sortByMake()'><button>Make</button></li>
+  <li (click)='sortByOwner()'><button>Owner</button></li>
+  <li (click)='sortByDate()'><button>Date</button></li>
+</ul>
+
+<ul class='cars'>
+  <li *ngFor='let car of cars'>
+    <article>
+      <h2>{{car.make}}</h2>
+      <h3>{{car.model}}</h3>
+      <img src="{{car.image}}" alt="car-image">
+      <a routerLink='/cars/{{car.id}}'>Details</a>
+    </article>
+  </li>
+</ul>

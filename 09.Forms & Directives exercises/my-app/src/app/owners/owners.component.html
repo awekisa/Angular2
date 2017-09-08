@@ -1,0 +1,17 @@
+<h1>Owners list</h1>
+<nav>
+  <ul>
+    <li>
+      <button (click)='sortByName()'>By Name</button>
+    </li>
+  </ul>
+</nav>
+
+<ul>
+  <li *ngFor='let owner of owners'>
+    <h2>{{owner?.name}}</h2>
+    <img src="{{owner?.image}}" alt="image">
+    <br />
+    <a routerLink='/owners/{{owner?.id}}'>Details</a>
+  </li>
+</ul>

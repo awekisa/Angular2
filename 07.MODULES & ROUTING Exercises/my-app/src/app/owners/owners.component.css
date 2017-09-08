@@ -1,0 +1,12 @@
+
+
+img {
+  width: 100%;
+}
+
+li {
+  width: 300px;
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+}

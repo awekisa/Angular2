@@ -1,0 +1,135 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-6 col-md-offset-3'>
+      <h1>Car Form</h1>
+      <form (ngSubmit)='submitCar()' #carForm='ngForm'>
+        <div class='form-group'>
+          <label for="make">Make</label>
+          <input
+            type="text"
+            class='form-control'
+            id='make'
+            name='make'
+            [(ngModel)]='car.make' 
+            required
+            #make='ngModel'>
+          
+          <div [hidden]='make.valid || make.pristine' class='alert alert-danger'>
+            Make is required!
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for="image">Image</label>
+          <input
+            type="url"
+            class='form-control'
+            id='image'
+            name='image'
+            [(ngModel)]='car.image' 
+            required
+            #image='ngModel'>
+          
+          <div [hidden]='image.valid || image.pristine' class='alert alert-danger'>
+            Image is required!
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for="model">Model</label>
+          <input
+            type="text"
+            class='form-control'
+            id='model'
+            name='model'
+            [(ngModel)]='car.model'
+            required
+            #model='ngModel'>
+          
+          <div [hidden]='model.valid || model.pristine' class='alert alert-danger'>
+            Model is required!
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for="engine">Engine</label>
+          <select
+            id="engine"
+            class='form-control'
+            name='engine'
+            [(ngModel)]='car.engine'>
+            <option *ngFor='let engine of engines' [value]='engine'>
+              {{engine}}
+            </option>
+          </select>
+        </div>
+
+        <div class='form-group'>
+          <label for="milleage">Milleage</label>
+          <input
+            type="text"
+            class='form-control'
+            id='milleage'
+            name='milleage'
+            [(ngModel)]='car.milleage'
+            required
+            #milleage='ngModel'>
+          
+          <div [hidden]='milleage.valid || milleage.pristine' class='alert alert-danger'>
+            Milleage is required!
+          </div>
+        </div>
+          
+        <div class='form-group'>
+          <label for="owner">Owner</label>
+          <input
+            type="text"
+            class='form-control'
+            id='owner'
+            name='owner'
+            [(ngModel)]='car.owner'
+            required
+            #owner='ngModel'>
+          
+          <div [hidden]='owner.valid || owner.pristine' class='alert alert-danger'>
+            Owner is required!
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class='form-control'
+            id='description'
+            name='description'
+            [(ngModel)]='car.description'
+            required
+            #description='ngModel'>
+          
+          <div [hidden]='description.valid || description.pristine' class='alert alert-danger'>
+            Description is required!
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for="price">Price</label>
+          <input
+            type="text"
+            class='form-control'
+            id='price'
+            name='price'
+            [(ngModel)]='car.price'
+            required
+            #price='ngModel'>
+          
+          <div [hidden]='price.valid || price.pristine' class='alert alert-danger'>
+            Price is required!
+          </div>
+        </div>
+
+        <button type='submit' class='btn btn success' [disabled]='!carForm.valid'>Submit</button>
+        <button type='button' class='btn btn success' (click)='clearCar()'>Clear</button>
+      </form>
+    </div>
+  </div>
+</div>

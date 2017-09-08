@@ -1,0 +1,29 @@
+<article>
+  <h2>{{car?.make}} - {{car?.model}}</h2>
+  <img borderDirective src="{{car?.image}}" alt="car-image">
+  <h4>{{car?.owner}}</h4>
+  <h4>{{car?.decription}}</h4>
+  <h4>{{car?.price}}</h4>
+  <h4>{{car?.engine | enginePipe}}</h4>
+  <h4>{{car?.date}}</h4>
+  <ul>
+    <li *ngFor='let comment of car?.comments'>
+      {{comment}}
+    </li>
+  </ul>
+  <a routerLink='/cars/edit/{{car?.id}}'>Edit Car</a>
+
+        <form (ngSubmit)='postComment()'>
+        <div class='form-group'>
+          <label for="comment">Comment</label>
+          <input
+            type="text"
+            class='form-control'
+            id='comment'
+            [(ngModel)]='comment'
+            name='comment'>
+        </div>
+
+        <button type='submit' class='btn btn success'>Comment</button>
+      </form>
+</article>

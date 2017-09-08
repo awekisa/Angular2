@@ -1,0 +1,23 @@
+<h2>All stats</h2>
+<stats></stats>
+<br/>
+<br/>
+<search-bar [page]='page' (queryAnimals)='updateAnimals($event)'></search-bar>
+<br/>
+<br/>
+<div *ngIf='animals'>
+    <h1>All animals</h1>
+    <div *ngIf='animals.length === 0'>No more animals available!</div>
+    <div class='animal-size'>
+        <div *ngFor='let animal of animals'>
+        <div>Name: {{animal.name}} Age: {{animal.age}} Color: {{animal.color}}</div>
+        <img src='{{animal.image}}' alt='animal'/>
+        <div>Type: {{animal.type}}<div>
+        <div><a routerLink='/animals/details/{{animal.id}}'>Details</a></div>
+        </div>
+        <div>
+            <button [disabled]='page === 1' (click)='prevPage()'>Prev</button>
+            <button [disabled]='animals.length === 0 || animals.length < 10' (click)='nextPage()'>Next</button>
+        </div>
+    </div>
+</div>
